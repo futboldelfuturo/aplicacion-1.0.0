@@ -1,0 +1,44 @@
+[build]
+  # No ejecutar build, solo publicar archivos estáticos
+  publish = "web-build"
+  command = "echo 'Build ya está generado, solo publicando archivos estáticos'"
+
+# IMPORTANTE: Las redirecciones de archivos estáticos deben ir ANTES de la redirección general
+# Esto asegura que los archivos (fuentes, imágenes, etc.) se sirvan correctamente
+
+# Redirigir todas las demás rutas a index.html para SPA (debe ir al final)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers para archivos estáticos (fuentes, imágenes, etc.)
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_expo/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,33 +1,49 @@
 {
   "expo": {
+    "extra": {
+      "expoPublicSupabaseUrl": "https://fbkoqwgtjwicieiltmbd.supabase.co",
+      "expoPublicSupabaseAnonKey": "sb_publishable_FQXcbQwNSqZAeG8TrqUJow_un9s74Np",
+      "expoPublicGoogleClientId": "754032777695-3tr5qok2ihjgafoo17ussav8pppingfa.apps.googleusercontent.com",
+      "eas": {
+        "projectId": "2902ff9f-e609-4523-9b2c-a804be250bab"
+      }
+    },
     "name": "futbol-del-futuro",
     "slug": "futbol-del-futuro",
+    "scheme": "futboldelfuturo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Logo.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/Logo.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.futboldelfuturo.app"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Logo.jpg",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [],
+      "package": "com.futboldelfuturo.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo1.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-video",
-      "react-native-video"
+      "react-native-video",
+      "expo-localization",
+      "expo-web-browser",
+      "expo-font"
     ]
   }
 }

@@ -1,6 +1,31 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-native",
+
+    "moduleResolution": "bundler",
+    "customConditions": ["react-native"],
+
+    "strict": true,
+    "noEmit": true,
+
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+
+    // 👇 Elimina esta línea:
+    // "types": ["expo-env"]
+  },
+  "include": ["src", "app.d.ts"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
